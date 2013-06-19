@@ -1,3 +1,5 @@
+source ~/.zsh/config/env
+
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
@@ -12,8 +14,8 @@ done
 # automatically enter directories without cd
 setopt auto_cd
 
-# use vim as the visual editor
-export VISUAL=vim
+# use sublime as the visual editor
+export VISUAL=subl
 export EDITOR=$VISUAL
 
 # aliases

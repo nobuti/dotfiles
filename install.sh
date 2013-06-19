@@ -34,5 +34,7 @@ for name in *; do
   fi
 done
 
+ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim -u ~/.vimrc.bundles +BundleInstall +qa

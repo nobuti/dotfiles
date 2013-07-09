@@ -19,3 +19,7 @@ alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false &
 # PostgreSQL
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
+# BrowserStack
+alias bstack="java -jar BrowserStackTunnel.jar IbyX1rvJCYo6sClyle8g localhost,5000,0
+"

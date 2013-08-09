@@ -22,6 +22,8 @@
   editor = subl --wait
   excludesfile = ~/.gitignore
   autocrlf = input
+[pull]
+  rebase = true
 [push]
   default = upstream
 [alias]

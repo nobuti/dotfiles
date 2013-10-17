@@ -34,7 +34,18 @@ for name in *; do
   fi
 done
 
-ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+sublime='/usr/local/bin/subl'
+if [ -L $sublime ]; then
+  echo "=> Sublime symlink exist: removing"
+  rm $sublime
+fi
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+
+# vundlerepo='~/.vim/bundle/vundle/'
+# if [ ! -d $vundlerepo ]; then
+#   echo "=> Vundle repo doesn't exist: creating"
+#   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# fi
+
 vim -u ~/.vimrc.bundles +BundleInstall +qa

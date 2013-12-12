@@ -1,11 +1,3 @@
-# adds the current branch name in green
-# git_prompt_info() {
-#  ref=$(git symbolic-ref HEAD 2> /dev/null)
-#  if [[ -n $ref ]]; then
-#    echo "[%{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}]"
-#  fi
-# }
-
 source ~/.zsh/lib/git
 
 # makes color constants available
@@ -28,5 +20,12 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
-# load thoughtbot/dotfiles scripts
+# Ruby GC
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
+export RUBY_FREE_MIN=$RUBY_HEAP_FREE_MIN
+
 export PATH="$HOME/.bin:$PATH"

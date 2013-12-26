@@ -41,11 +41,3 @@ if [ -L $sublime ]; then
 fi
 
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
-
-# vundlerepo='~/.vim/bundle/vundle/'
-# if [ ! -d $vundlerepo ]; then
-#   echo "=> Vundle repo doesn't exist: creating"
-#   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-# fi
-
-vim -u ~/.vimrc.bundles +BundleInstall +qa

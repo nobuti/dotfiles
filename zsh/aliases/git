@@ -27,7 +27,7 @@ alias glgga='git log --graph --decorate --all'
 alias glo='git log --oneline'
 alias glog="git log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'"
 alias gss='git status -s'
-alias ga='git add'
+alias ga='git add --all'
 alias gm='git merge'
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'

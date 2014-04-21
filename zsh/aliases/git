@@ -1,6 +1,6 @@
 # Aliases
 alias g='git'
-alias gst='git status'
+alias gst='git status -sb'
 alias gd='git diff'
 alias gpr='git pull --rebase'
 gdv() { git diff -w "$@" | view - }

@@ -2,6 +2,7 @@
 alias c="clear"
 alias f="foreman start"
 alias fw="foreman start web"
+alias fdev="foreman start -f Procfile.dev"
 alias webfaction="ssh nobuti@nobuti.webfactional.com"
 
 # Empty the Trash on all mounted volumes and the main HDD
@@ -19,3 +20,6 @@ alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false &
 # PostgreSQL
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
+# Rails BeBanjo
+alias movida_sync="be rake db:drop && be rake db:create && bj sync --no-publications --no-events"

@@ -21,7 +21,12 @@ alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false &
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
+# MySQL
+alias mysql_start="/usr/local/bin/mysql.server start"
+alias mysql_stop="/usr/local/bin/mysql.server stop"
+alias mysql_restart="/usr/local/bin/mysql.server restart"
+
 # Rails BeBanjo
 alias movida_sync="be rake db:drop && be rake db:create && bj sync --no-publications --no-events"
-alias movida_test="ALL_SPECS=true bundle exec rake parallel:drop[3] parallel:create[3] parallel:load_schema[3] parallel:spec[3]"
+alias movida_test="ALL_SPECS=true bundle exec rake parallel:drop[2] parallel:create[2] parallel:load_schema[2] parallel:spec[2]"
 alias sequence_test="be cucumber features --tags ~@skip -r features"

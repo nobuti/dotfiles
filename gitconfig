@@ -19,7 +19,7 @@
   changed = green
   untracked = cyan
 [core]
-  editor = vim
+  editor = subl --wait
   excludesfile = ~/.gitignore
   autocrlf = input
 [pull]

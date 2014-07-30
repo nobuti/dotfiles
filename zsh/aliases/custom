@@ -4,6 +4,7 @@ alias f="foreman start"
 alias fw="foreman start web"
 alias fdev="foreman start -f Procfile.dev"
 alias webfaction="ssh nobuti@nobuti.webfactional.com"
+alias rm=rmtrash
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed

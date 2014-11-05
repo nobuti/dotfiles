@@ -34,4 +34,8 @@ alias sequence_test="be cucumber features --tags ~@skip -r features"
 alias ftail="tail -f log/development.log"
 alias config_revamp='for i in config/*.example; do cp "$i" "${i/.example}"; done'
 
+# Highlight to format snippets code in keynotes
 alias highlight="pbpaste | highlight --syntax=js -O rtf | pbcopy"
+
+# Lazy local server
+alias server="ruby -run -e httpd . -p 8080"

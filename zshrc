@@ -1,5 +1,3 @@
-source ~/.zsh/config/env
-
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 

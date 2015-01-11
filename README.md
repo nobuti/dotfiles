@@ -14,8 +14,3 @@ First, create symlinks for ssh credentials, usually backed up in Dropbox. Remove
     ./install.sh
 
 This will create symlinks for config files in your home directory. 
-
-Credits
--------
-
-![thoughtbot](http://thoughtbot.com/images/tm/logo.png)

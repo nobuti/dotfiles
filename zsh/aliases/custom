@@ -27,15 +27,5 @@ alias mysql_start="/usr/local/bin/mysql.server start"
 alias mysql_stop="/usr/local/bin/mysql.server stop"
 alias mysql_restart="/usr/local/bin/mysql.server restart"
 
-# Rails BeBanjo
-alias movida_sync="be rake db:drop && be rake db:create && bj sync --no-publications --no-events"
-alias movida_test="ALL_SPECS=true bundle exec rake parallel:drop[2] parallel:create[2] parallel:load_schema[2] parallel:spec[2]"
-alias sequence_test="be cucumber features --tags ~@skip -r features"
-alias ftail="tail -f log/development.log"
-alias config_revamp='for i in config/*.example; do cp "$i" "${i/.example}"; done'
-
-# Highlight to format snippets code in keynotes
-alias highlight="pbpaste | highlight --syntax=js -O rtf | pbcopy"
-
 # Lazy local server
 alias server="ruby -run -e httpd . -p 8080"

@@ -1,0 +1,22 @@
+# open a new tab on Terminal with the current working dir
+function newtab() {
+  osascript -e "
+    tell application \"System Events\" to tell process \"Terminal\" to keystroke \"t\" using command down
+    tell application \"Terminal\" to do script \"cd $1\" in selected tab of the front window
+    tell application \"Terminal\" to do script \"$2\" in selected tab of the front window
+  " > /dev/null 2>&1
+}
+
+function letswork(){
+  newtab ~/work "redis-server"
+  sleep 2
+  newtab ~/work "rabbitmq-server"
+  sleep 2
+  newtab ~/work "mongod"
+  sleep 2
+  newtab ~/work/socialbro/socialbro "nodemon api"
+  sleep 2
+  newtab ~/work/socialbro/socialbro "nodemon app_api"
+  sleep 2
+  newtab ~/work/socialbro/socialbro "nodemon admin"
+}

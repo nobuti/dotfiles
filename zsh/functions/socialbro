@@ -8,6 +8,8 @@ function newtab() {
 }
 
 function letswork(){
+  newtab ~/work "mysqld"
+  sleep 2
   newtab ~/work "redis-server"
   sleep 2
   newtab ~/work "rabbitmq-server"
@@ -19,4 +21,8 @@ function letswork(){
   newtab ~/work/socialbro/socialbro "nodemon app_api"
   sleep 2
   newtab ~/work/socialbro/socialbro "nodemon admin"
+}
+
+function kill_daemon(){
+  ps aux | grep [m]ysqld | awk '{print $2}' | xargs kill -9
 }

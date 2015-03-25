@@ -14,6 +14,8 @@ function letswork(){
   sleep 2
   newtab ~/work "rabbitmq-server"
   sleep 2
+  newtab ~/work "/usr/local/var/solr/solr-4.10.2/bin/solr start -f -s /usr/local/var/solr/solr-4.10.2/socialbro/solr/"
+  sleep 2
   newtab ~/work "mongod"
   sleep 2
   newtab ~/work/socialbro/socialbro "nodemon api"

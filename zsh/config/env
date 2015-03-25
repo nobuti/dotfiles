@@ -9,6 +9,7 @@ eval "$(rbenv init - zsh --no-rehash)"
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 ulimit -n 1024
 ulimit -u 1024

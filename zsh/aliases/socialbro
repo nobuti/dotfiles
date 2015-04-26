@@ -1,3 +1,0 @@
-# Socialbro
-alias sbsync="node workers/sync.js"
-alias sbpromote="node workers/sync_promote.js"

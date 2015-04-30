@@ -18,9 +18,6 @@ setopt auto_cd
 export VISUAL=subl
 export EDITOR=$VISUAL
 
-# NVM
-export NVM_DIR=~/.nvm
-
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"

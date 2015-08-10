@@ -28,3 +28,6 @@ alias mysql_restart="/usr/local/bin/mysql.server restart"
 
 # Lazy local server
 alias server="ruby -run -e httpd . -p 8080"
+
+# Jobs
+alias matar="ps aux"

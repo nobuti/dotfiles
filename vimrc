@@ -3,7 +3,9 @@ set nocompatible " Not old vi version
 syntax on " Syntax highlight
 set nu " Show line numbers
 filetype indent plugin on
+nnoremap <silent> <F7> :set cursorline!<CR>
 
+" Copy pasted from who knows where
 set linebreak " Break lines at word (requires Wrap lines)
 set showbreak=+++ " Wrap-broken line prefix
 set textwidth=100 " Line wrap (number of cols)

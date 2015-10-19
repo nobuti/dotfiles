@@ -16,7 +16,7 @@ setopt auto_cd
 
 # use sublime as the visual editor
 export VISUAL=subl
-export EDITOR=$VISUAL
+export EDITOR=vim
 
 # aliases
 if [ -e "$HOME/.aliases" ]; then

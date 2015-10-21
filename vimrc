@@ -5,6 +5,11 @@ syntax on " Syntax highlight
 set nu " Show line numbers
 filetype indent plugin on
 nnoremap <silent> <F7> :set cursorline!<CR>
+set nobackup
+set noswapfile
+
+" NerdTree map key
+map <C-n> :NERDTreeToggle<CR>
 
 " Copy pasted from who knows where
 set linebreak " Break lines at word (requires Wrap lines)

@@ -2,6 +2,14 @@
 set nocompatible " Not old vi version
 execute pathogen#infect()
 syntax on " Syntax highlight
+
+" Font
+set guifont=Sauce\ Code\ Powerline:h18
+
+" Solarize theme
+set background=dark
+colorscheme solarized
+
 set nu " Show line numbers
 filetype indent plugin on
 nnoremap <silent> <F7> :set cursorline!<CR>

@@ -1,5 +1,6 @@
 " General
 set nocompatible " Not old vi version
+execute pathogen#infect() " Pathogen plugin manager
 syntax on " Syntax highlight
 set nu " Show line numbers
 filetype indent plugin on

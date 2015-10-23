@@ -1,5 +1,6 @@
 # rbenv
 eval "$(rbenv init - zsh --no-rehash)"
+. /usr/local/etc/profile.d/z.sh
 
 # load our own completion functions    
 fpath=(~/.zsh/completion $fpath)   

@@ -33,11 +33,3 @@ for name in *; do
     fi
   fi
 done
-
-sublime='/usr/local/bin/subl'
-if [ -L $sublime ]; then
-  echo "=> Sublime symlink exist: removing"
-  rm $sublime
-fi
-
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl

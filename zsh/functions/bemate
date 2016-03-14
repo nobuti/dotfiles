@@ -1,4 +1,4 @@
 function bemate() {
   #do things with parameters like $1 such as
-  curl --data "$1" 'https://bemate.slack.com/services/hooks/slackbot?token=aubGcCfhXBcS8jpeT7N6Ljnn&channel=%23random'
+  curl --data "$1" 'https://bemate.slack.com/services/hooks/slackbot?token=aubGcCfhXBcS8jpeT7N6Ljnn&channel=%23dev'
 }

@@ -3,5 +3,6 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.tim:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 export SLIMERJSLAUNCHER=/Applications/FirefoxSlimer.app/Contents/MacOS/firefox

@@ -4,7 +4,7 @@
 # A Powerline-inspired theme for ZSH
 #
 
-DEFAULT_USER="Buti"
+DEFAULT_USER="buti"
 
 ### Segment drawing
 # A few utility functions to make it easy and re-usable to draw segmented prompts

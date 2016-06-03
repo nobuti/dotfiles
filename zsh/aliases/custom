@@ -31,3 +31,7 @@ alias server="ruby -run -e httpd . -p 8080"
 
 # Jobs
 alias matar="ps aux"
+
+# CDB
+alias cdb="vagrant ssh -c 'tmuxinator cartodb'"
+alias glazy="find . -type d -depth 1 -exec sh -c '(cd {} && pwd && git sync)' ';'"

@@ -35,3 +35,4 @@ alias matar="ps aux"
 # CDB
 alias cdb="vagrant ssh -c 'tmuxinator cartodb'"
 alias glazy="find . -type d -depth 1 -exec sh -c '(cd {} && pwd && git sync)' ';'"
+alias gclean="git branch --merged | grep -v "\*" | xargs -n 1 git branch -d"

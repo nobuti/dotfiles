@@ -4,6 +4,9 @@
 [credential]
   helper = osxkeychain
 [color]
+  branch = auto
+  diff = auto
+  status = auto
   ui = auto
 [color "branch"]
   current = yellow reverse
@@ -13,7 +16,7 @@
   meta = yellow bold
   frag = magenta bold
   old = red bold
-  new = green bold
+  new = cyan bold
 [color "status"]
   added = yellow
   changed = green
@@ -22,6 +25,7 @@
   editor = vim
   excludesfile = ~/.gitignore
   autocrlf = input
+	pager = less -R
 [pull]
   rebase = true
 [push]

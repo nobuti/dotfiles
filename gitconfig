@@ -25,7 +25,9 @@
   editor = vim
   excludesfile = ~/.gitignore
   autocrlf = input
-	pager = less -R
+  pager = less -R
+[diff]
+  compactionHeuristic = true
 [pull]
   rebase = true
 [push]

@@ -19,6 +19,9 @@ set noswapfile
 " NerdTree map key
 map <C-n> :NERDTreeToggle<CR>
 
+" Show file options above the command line
+set wildmenu
+
 " Copy pasted from who knows where
 set linebreak " Break lines at word (requires Wrap lines)
 set showbreak=+++ " Wrap-broken line prefix

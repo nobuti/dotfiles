@@ -18,8 +18,10 @@ alias showdeskicons="defaults write com.apple.finder CreateDesktop -bool true &&
 alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 
 # PostgreSQL
-alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log -o "-F -p 5432" start'
+alias pg_stop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
+alias pg10_start='/usr/local/pgsql10/bin/pg_ctl -D /users/buti/tmp/pg10 -l /users/buti/tmp/pg10/logfile start'
+alias pg10_stop='/usr/local/pgsql10/bin/pg_ctl -D /users/buti/tmp/pg10 -l /users/buti/tmp/pg10/logfile stop'
 
 # MySQL
 alias mysql_start="/usr/local/bin/mysql.server start"

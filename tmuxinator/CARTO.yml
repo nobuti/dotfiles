@@ -1,0 +1,32 @@
+# ~/.tmuxinator/CARTO.yml
+
+name: CARTO
+root: ~/Work/Pro/Carto/cartodb
+windows:
+  - deps: 
+      layout: main-vertical
+      panes:
+        - redis-server
+        - pg_start
+  - server:
+      - sleep 120
+      - bundle exec rails s
+  - resque:
+      - sleep 120
+      - bundle exec script/resque
+  - grunt:
+      - nvm use 6.9.2
+      - grunt dev
+  - frontend-tests:
+      - sleep 120
+      - grunt affected_specs --specs=all
+  - sql:
+    - cd ..
+    - cd CartoDB-SQL-API
+    - nvm use 6.9.2
+    - node app.js development
+  - maps:
+    - cd ..
+    - cd Windshaft-cartodb
+    - nvm use 6.9.2
+    - node app.js development

@@ -1,4 +1,4 @@
-# ~/.tmuxinator/CARTO.yml
+# ~/.tmuxinator/carto.yml
 
 name: CARTO
 root: ~/Work/Pro/Carto/cartodb

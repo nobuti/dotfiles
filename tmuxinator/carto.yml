@@ -1,7 +1,7 @@
 # ~/.tmuxinator/carto.yml
 
 name: CARTO
-root: ~/Work/Pro/Carto/cartodb
+root: ~/Workspace/Pro/Carto/cartodb
 windows:
   - deps:
       layout: main-vertical

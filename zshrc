@@ -2,8 +2,10 @@
 fpath=(~/.zsh/completion $fpath)   
 
 # completion
-autoload -U compinit
-compinit
+# autoload -U compinit
+# compinit
+autoload -U promptinit; promptinit
+prompt pure
 
 for function in ~/.zsh/functions/*; do
   source $function
@@ -31,17 +33,11 @@ bindkey "^E" end-of-line
 # expand functions in the prompt
 setopt prompt_subst
 
-# prompt
-export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
-
 # ignore duplicate history entries
 setopt histignoredups
 
 # keep TONS of history
 export HISTSIZE=4096
-
-# look for ey config in project dirs
-export EYRC=./.eyrc
 
 # automatically pushd
 setopt auto_pushd

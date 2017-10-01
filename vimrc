@@ -93,5 +93,3 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.sass-cache$|log\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
-
-

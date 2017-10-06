@@ -27,6 +27,8 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
+Plug 'rking/ag.vim'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " General
@@ -93,3 +95,5 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.sass-cache$|log\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden -g ""'
+

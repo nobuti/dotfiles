@@ -4,7 +4,9 @@ fpath=(~/.zsh/completion $fpath)
 # completion
 # autoload -U compinit
 # compinit
-autoload -U promptinit; promptinit
+autoload -Uz compinit promptinit; 
+compinit
+promptinit
 prompt pure
 
 for function in ~/.zsh/functions/*; do

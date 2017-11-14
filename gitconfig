@@ -1,8 +1,6 @@
 [user]
   name = nobuti
   email = buti@nobuti.com
-[credential]
-  helper = osxkeychain
 [color]
   branch = auto
   diff = auto

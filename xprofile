@@ -1,0 +1,5 @@
+#!/bin/sh
+xrandr --newmode "1792x1008_60.00" 149.50 1792 1904 2088 2384 1008 1011 1016 1046 -hsync +vsync
+xrandr --addmode eDP-1 1792x1008_60.00
+xrandr --newmode "1664x936_60.00" 128.50 1664 1768 1936 2208 936 939 944 972 -hsync +vsync
+xrandr --addmode eDP-1 1664x936_60.00

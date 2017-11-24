@@ -1,4 +1,4 @@
-" Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+" Use 26-bit (true-color) mode in Vim/Neovim when outside tmux.
 " If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 " (see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
 
@@ -29,6 +29,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " General
@@ -50,6 +51,8 @@ filetype indent plugin on
 nnoremap <silent> <F7> :set cursorline!<CR>
 set nobackup
 set noswapfile
+set laststatus=2
+set noshowmode
 
 " Update time
 set updatetime=250
@@ -97,3 +100,6 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden -g ""'
 
+let g:lightline = {
+  \ 'colorscheme': 'one',
+  \ }

@@ -1,10 +1,10 @@
-# load our own completion functions    
-fpath=(~/.zsh/completion $fpath)   
+# load our own completion functions
+fpath=(~/.zsh/completion $fpath)
 
 # completion
 # autoload -U compinit
 # compinit
-autoload -Uz compinit promptinit; 
+autoload -Uz compinit promptinit;
 compinit
 promptinit
 prompt pure
@@ -58,4 +58,3 @@ setopt EXTENDED_GLOB
 
 export PATH="$HOME/.yarn/bin:$PATH"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-

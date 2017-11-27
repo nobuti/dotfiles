@@ -24,11 +24,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/unite.vim'
+Plug 'bling/vim-airline'
 call plug#end()
 
 " General
@@ -54,9 +56,6 @@ set noswapfile
 " Update time
 set updatetime=250
 
-" NerdTree map key
-map <C-n> :NERDTreeToggle<CR>
-
 " Show file options above the command line
 set wildmenu
 
@@ -79,7 +78,7 @@ set autoindent  " Auto-indent new lines
 set shiftwidth=4  " Number of auto-indent spaces
 set smartindent " Enable smart-indent
 set smarttab  " Enable smart-tabs
-set softtabstop=4 " Number of spaces per Tab
+set softtabstop=2 " Number of spaces per Tab
 
 " Advanced
 set ruler " Show row and column ruler information
@@ -97,3 +96,24 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden -g ""'
 
+" Unite
+let g:unite_source_history_yank_enable = 1
+try
+    let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+    call unite#filters#matcher_default#use(['matcher_fuzzy'])
+ catch
+    endtry
+" search a file in the filetree
+nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
+" " reset not it is <C-l> normally
+:nnoremap <space>r <Plug>(unite_restart)
+
+" Buffer tabs
+:noremap <C-left> :bprev<CR>
+:noremap <C-right> :bnext<CR>
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+"
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'

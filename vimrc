@@ -21,7 +21,6 @@ endif
 call plug#begin()
 Plug 'mxw/vim-jsx'
 Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'sheerun/vim-polyglot'
@@ -88,13 +87,6 @@ set backspace=indent,eol,start  " Backspace behaviour
 
 " Javascript
 let g:jsx_ext_required = 0
-
-" Ctrlp fuzzy search
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.sass-cache$|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
-let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden -g ""'
 
 " Unite
 let g:unite_source_history_yank_enable = 1

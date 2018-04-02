@@ -31,6 +31,7 @@ Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'prettier/prettier'
 call plug#end()
 
 " General

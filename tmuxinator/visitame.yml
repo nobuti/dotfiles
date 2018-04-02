@@ -1,0 +1,41 @@
+# ~/.tmuxinator/visitame.yml
+
+name: visitame
+root: ~/Dev/7r/visitame
+pre_window:
+  - . ~/Dev/7r/visitame/set-vars.sh
+  - nvm use 9.4.0
+windows:
+  # Visita.me API core
+  - core:
+      layout: eee7,204x47,0,0{102x47,0,0,0,101x47,103,0[101x23,103,0,4,101x23,103,24,5]}
+      root: ~/Dev/7r/visitame/visitame-core
+      panes:
+        - yarn && PORT=3000 yarn dev
+        - now logs https://visitame-core.now.sh -f
+  # Visita.me Cron
+  - cron:
+      layout: c758,204x47,0,0{101x47,0,0,1,102x47,102,0[102x23,102,0,6,102x23,102,24,7]}
+      root: ~/Dev/7r/visitame/visitame-cron
+      panes:
+        - yarn && PORT=3001 yarn dev
+        - now logs https://visitame-cron.now.sh -f
+  # Visita.me Facebook Bot
+  - facebook:
+      layout: ef11,204x47,0,0{102x47,0,0,2,101x47,103,0[101x23,103,0,8,101x23,103,24,9]}
+      root: ~/Dev/7r/visitame/visitame-facebook
+      panes:
+        - yarn && PORT=3002 yarn dev
+        - now logs https://visitame-facebook.now.sh -f
+  # Visita.me Web
+  - web:
+      layout: 2e68,204x47,0,0{102x47,0,0,3,101x47,103,0[101x23,103,0,10,101x23,103,24,11]}
+      root: ~/Dev/7r/visitame/visitame-web
+      panes:
+        - yarn && PORT=3003 yarn dev
+        - now logs https://visitame-web.now.sh -f
+  # ngrok service
+  - ngrok:
+      root: ~/Dev/7r/visitame
+      panes:
+        - ngrok start -config ./.ngrok/ngrok.yml core cron facebook web

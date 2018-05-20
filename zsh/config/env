@@ -6,4 +6,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.tim:$PATH"
 
 export NVM_DIR=~/.nvm
-. /usr/local/opt/nvm/nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

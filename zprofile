@@ -1,3 +1,3 @@
 # rbenv
-eval "$(rbenv init - zsh --no-rehash)"
+eval "$(rbenv init -)"
 . /usr/local/etc/profile.d/z.sh

@@ -1,0 +1,3 @@
+function timecapsule() {
+  sudo mount.cifs //192.168.1.43/Data ~/TimeCapsule -o password="$1",sec=ntlm,uid=buti,vers=1.0
+}

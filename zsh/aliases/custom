@@ -31,8 +31,5 @@ alias server="ruby -run -e httpd . -p 8080"
 # Jobs
 alias matar="ps aux"
 
-# CDB
-alias cdb="vagrant ssh -c 'tmuxinator cartodb'"
-alias glazy="find . -type d -depth 1 -exec sh -c '(cd {} && pwd && git sync)' ';'"
-alias gclean="git branch --merged | grep -v "(^\*|master)" | xargs -n 1 git branch -d"
-alias builder="grunt clean && grunt config && grunt cdb && grunt pre_client && grunt concat:js && grunt jst && grunt css && grunt manifest && grunt dev"
+# Stats
+alias monitor="conky"

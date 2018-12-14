@@ -24,7 +24,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'joshdick/onedark.vim'
+Plug 'connorholyday/vim-snazzy'
 Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/vimproc.vim'
@@ -36,13 +36,10 @@ call plug#end()
 " General
 set showcmd
 set nocompatible " Not old vi version
-execute pathogen#infect()
 syntax on " Syntax highlight
 
 " Theme
-set background=dark
-colorscheme onedark
-let g:onedark_termcolors=256
+colorscheme snazzy
 
 set nu " Show line numbers
 filetype indent plugin on
@@ -105,6 +102,6 @@ nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
-"
+
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'

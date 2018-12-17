@@ -13,13 +13,18 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'prettier/vim-prettier'
+Plug 'wincent/command-t'
 call plug#end()
+
 
 " General
 set termguicolors
 set showcmd
 set nocompatible " Not old vi version
 syntax on " Syntax highlight
+
+" Leader
+let mapleader = ","
 
 " Theme
 colorscheme snazzy
@@ -102,4 +107,11 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \     'javascript': ['eslint'],
 \   }
+
+" Explore like vinegar
+nnoremap - :Explore<CR>
+let g:netrw_banner = 0
+
+" Command-t remap
+nmap <leader>p :CommandT<CR>
 

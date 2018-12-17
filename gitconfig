@@ -32,6 +32,8 @@
   rebase = true
 [push]
   default = upstream
+[rebase]
+  autoStash = true
 [alias]
   aa = add --all
   ap = add --patch

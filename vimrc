@@ -14,6 +14,7 @@ Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'prettier/vim-prettier'
 Plug 'wincent/command-t'
+Plug 'ap/vim-css-color'
 call plug#end()
 
 
@@ -92,7 +93,7 @@ inoremap <S-Down> <Esc>:m+<CR>
 
 " Emmet in jsx
 " let g:user_emmet_leader_key='<Tab>'
-let g:user_emmet_expandabbr_key = '<Tab>'
+let g:user_emmet_leader_key=','
 let g:user_emmet_settings = {
 \     'javascript': {
 \	'extends': 'jsx',

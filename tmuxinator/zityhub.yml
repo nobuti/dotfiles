@@ -1,0 +1,20 @@
+# ~/.tmuxinator/zityhub.yml
+
+name: api
+root: ~/Dev/zityhub
+windows:
+  # Database
+  - database:
+      - cd api
+      - make database
+  # api
+  - api:
+      - sleep 5
+      - cd api
+      - code . && yarn && yarn dev
+  # test
+  - tests:
+      - sleep 10
+      - cd api
+      - yarn clean-db
+      - yarn test

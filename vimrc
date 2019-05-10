@@ -52,6 +52,7 @@ set wildmenu
 set wildignore+=**/node_modules   " ignores node_modules
 
 " Copy pasted from who knows where
+set cursorline " Highlight current line
 set linebreak " Break lines at word (requires Wrap lines)
 set showbreak=+++ " Wrap-broken line prefix
 set textwidth=100 " Line wrap (number of cols)
@@ -74,6 +75,8 @@ set ruler " Show row and column ruler information
 
 set undolevels=1000 " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
+
+set wildignore+=*/node_modules/* " Don't search inside Node.js modules
 
 " Javascript
 let g:jsx_ext_required = 0

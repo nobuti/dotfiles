@@ -2,7 +2,7 @@
   name = nobuti
   email = buti@nobuti.com
 [credential]
-  helper = osxkeychain
+  helper = store
 [color]
   branch = auto
   diff = auto

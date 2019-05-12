@@ -8,13 +8,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'connorholyday/vim-snazzy'
-Plug 'rking/ag.vim'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'prettier/vim-prettier'
 Plug 'wincent/command-t'
 Plug 'ap/vim-css-color'
+Plug 'tpope/vim-vinegar'
+Plug 'dyng/ctrlsf.vim'
 call plug#end()
 
 
@@ -81,25 +81,13 @@ set wildignore+=*/node_modules/* " Don't search inside Node.js modules
 " Javascript
 let g:jsx_ext_required = 0
 
-" Buffer tabs
-:noremap <C-left> :bprev<CR>
-:noremap <C-right> :bnext<CR>
-:noremap <C-w> :bw<CR>
-
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-"Move lines with Shift
-nnoremap <S-Up> :m-2<CR>
-nnoremap <S-Down> :m+<CR>
-inoremap <S-Up> <Esc>:m-2<CR>
-inoremap <S-Down> <Esc>:m+<CR>
-
 " Emmet in jsx
-" let g:user_emmet_leader_key='<Tab>'
 let g:user_emmet_leader_key=','
 let g:user_emmet_settings = {
 \     'javascript': {
@@ -116,10 +104,38 @@ let g:ale_fixers = {
 \     'javascript': ['eslint'],
 \   }
 
-" Explore like vinegar
-nnoremap - :Explore<CR>
-let g:netrw_banner = 0
-
 " Command-t remap
 nmap <leader>p :CommandT<CR>
+" Ignore node_modules with command-t
+let g:CommandTWildIgnore=&wildignore . ",*/node_modules"
+
+" Buffer tabs
+:noremap <C-Left> :bprev<CR>
+:noremap <C-Right> :bnext<CR>
+:noremap <C-x> :bw<CR>
+:noremap <C-n> :enew<CR>
+
+" Windows navigation
+nnoremap <leader>w <C-w><C-w>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+"This unsets the "last search pattern" register by hitting return
+noremap <CR> :noh<CR><CR>
+
+" Open :CtrlSF with <Leader>f
+nnoremap <leader>f :CtrlSF<Space>
+vnoremap <leader>f :CtrlSF<Space>
+
+"Move lines with Alt
+nnoremap <A-Up> :m-2<CR>
+nnoremap <A-Down> :m+<CR>
+inoremap <A-Up> <Esc>:m-2<CR>
+inoremap <A-Down> <Esc>:m+<CR>
+
+" Moving lines in Visual mode
+vnoremap <A-Down> :m '>+1<CR>gv=gv
+vnoremap <A-Up> :m '<-2<CR>gv=gv
 

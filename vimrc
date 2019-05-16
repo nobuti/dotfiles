@@ -15,6 +15,7 @@ Plug 'wincent/command-t'
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-vinegar'
 Plug 'dyng/ctrlsf.vim'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install({'tag':1})}}
 call plug#end()
 
 
@@ -40,7 +41,7 @@ filetype indent plugin on
 nnoremap <silent> <F7> :set cursorline!<CR>
 set nobackup
 set noswapfile
-set hidden
+set nohidden
 
 " Update time
 set updatetime=250
@@ -78,6 +79,18 @@ set backspace=indent,eol,start  " Backspace behaviour
 
 set wildignore+=*/node_modules/* " Don't search inside Node.js modules
 
+" Closable netrw
+augroup netrw_buf_hidden_fix
+    autocmd!
+
+    " Set all non-netrw buffers to bufhidden=hide
+    autocmd BufWinEnter *
+                \  if &ft != 'netrw'
+                \|     set bufhidden=hide
+                \| endif
+
+augroup end
+
 " Javascript
 let g:jsx_ext_required = 0
 
@@ -96,8 +109,8 @@ let g:user_emmet_settings = {
 \   }
 
 " Ale
-let g:ale_sign_error = '·' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
+let g:ale_sign_error = '*' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '*'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {

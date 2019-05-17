@@ -152,3 +152,6 @@ inoremap <A-Down> <Esc>:m+<CR>
 vnoremap <A-Down> :m '>+1<CR>gv=gv
 vnoremap <A-Up> :m '<-2<CR>gv=gv
 
+" Search under the cursor
+:nnoremap <Leader>s /\<<C-r><C-w>\>
+:nnoremap <Leader>r :%s/\<<C-r><C-w>\>/

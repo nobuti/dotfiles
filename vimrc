@@ -42,6 +42,7 @@ nnoremap <silent> <F7> :set cursorline!<CR>
 set nobackup
 set noswapfile
 set nohidden
+set expandtab
 
 " Update time
 set updatetime=250

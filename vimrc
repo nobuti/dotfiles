@@ -23,6 +23,7 @@ call plug#end()
 set termguicolors
 set showcmd
 set nocompatible " Not old vi version
+set clipboard=unnamedplus " copy to clipboard
 syntax on " Syntax highlight
 
 " Leader

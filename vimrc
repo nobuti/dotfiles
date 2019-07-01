@@ -16,6 +16,7 @@ Plug 'ap/vim-css-color'
 Plug 'tpope/vim-vinegar'
 Plug 'dyng/ctrlsf.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install({'tag':1})}}
+Plug 'luochen1990/rainbow'
 call plug#end()
 
 
@@ -118,6 +119,9 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \     'javascript': ['eslint'],
 \   }
+
+" Rainbow
+let g:rainbow_active = 1
 
 " Command-t remap
 nmap <leader>p :CommandT<CR>

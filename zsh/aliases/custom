@@ -16,3 +16,5 @@ alias monitor="conky"
 
 # Screencast
 alias screencast="ffmpeg -f alsa -ac 1 -i pulse -f x11grab -r 30 -s 1920x1080  -i :0.0 -acodec aac -vcodec mpeg4 -preset medium -qscale:v 5"
+
+alias vim="nvim"

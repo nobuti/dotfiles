@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/buti/Dev/zityhub/admin/pages'
+let g:netrw_dirhist_1='/home/buti/Dev/zityhub/admin'
+let g:netrw_dirhist_0='/home/buti/.config/nvim'
+let g:netrw_dirhist_9='/home/buti/Dev/zityhub/admin/pages/users/views/components'
+let g:netrw_dirhist_8='/home/buti/Dev/zityhub/admin/pages/users/views'
+let g:netrw_dirhist_7='/home/buti/Dev/zityhub/admin/pages/users'
+let g:netrw_dirhist_6='/home/buti/Dev/zityhub/admin/pages'
+let g:netrw_dirhist_5='/home/buti/Dev/zityhub/admin'
+let g:netrw_dirhist_4='/home/buti/Dev/zityhub/admin/constants/locale'
+let g:netrw_dirhist_3='/home/buti/Dev/zityhub/admin/constants'

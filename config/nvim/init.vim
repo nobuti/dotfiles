@@ -19,6 +19,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'dyng/ctrlsf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'luochen1990/rainbow'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 call plug#end()
 
 
@@ -33,7 +34,7 @@ syntax on " Syntax highlight
 let mapleader = ","
 
 " Theme
-colorscheme nord
+colorscheme onehalflight
 
 set nu " Show line numbers
 filetype indent plugin on
@@ -92,7 +93,7 @@ augroup end
 let g:jsx_ext_required = 0
 
 " Airline configuration
-let g:airline_theme='nord'
+let g:airline_theme='onehalfdark'
 "let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#buffer_nr_show = 1
 "let g:airline#extensions#tabline#fnamemod = ':.'
@@ -170,3 +171,6 @@ vnoremap <A-Up> :m '<-2<CR>gv=gv
 " Search under the cursor
 :nnoremap <Leader>s /\<<C-r><C-w>\>
 :nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
+
+" Select all
+map <C-a> <esc>gg0VG$<CR>

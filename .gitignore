@@ -1,4 +1,6 @@
 !bin
 vim/plugged/
 vim/bundle/
+config/nvim/plugged
+config/nvim/.netrwhist
 ssh/

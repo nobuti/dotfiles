@@ -13,3 +13,5 @@ vim/.netrwhist
 zeus.json
 .idea/
 .rbenv-vars
+
+config/nvim/.netrwhist

@@ -21,3 +21,4 @@ alias vim="nvim"
 
 alias yo="sudo chown -R $USER:$USER ."
 alias database="docker run --rm -P -p 127.0.0.1:5432:5432 -e POSTGRES_PASSWORD=\"wadus\" --name pg postgres:alpine"
+alias gprune="git branch --merged | grep -v \"\*\" | grep -v \"master\" | grep -v \"develop\" | grep -v \"staging\" | grep -v \"sandbox\" | xargs -n 1 git branch -d"

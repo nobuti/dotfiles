@@ -10,6 +10,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'connorholyday/vim-snazzy'
 Plug 'vim-airline/vim-airline'
 Plug 'arcticicestudio/nord-vim'
+Plug 'haishanh/night-owl.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'prettier/vim-prettier'
@@ -19,12 +20,13 @@ Plug 'tpope/vim-vinegar'
 Plug 'dyng/ctrlsf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'luochen1990/rainbow'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
 call plug#end()
 
 
 " General
-set termguicolors
+if (has("termguicolors"))
+ set termguicolors
+endif
 set showcmd
 set nocompatible " Not old vi version
 set clipboard=unnamedplus " copy to clipboard
@@ -34,7 +36,7 @@ syntax on " Syntax highlight
 let mapleader = ","
 
 " Theme
-colorscheme onehalflight
+colorscheme night-owl
 
 set nu " Show line numbers
 filetype indent plugin on
@@ -93,7 +95,7 @@ augroup end
 let g:jsx_ext_required = 0
 
 " Airline configuration
-let g:airline_theme='onehalfdark'
+let g:airline_theme='night_owl'
 "let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#buffer_nr_show = 1
 "let g:airline#extensions#tabline#fnamemod = ':.'

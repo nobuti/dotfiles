@@ -59,8 +59,5 @@ setopt EXTENDED_GLOB
 export PATH="$HOME/.yarn/bin:$PATH"
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(rbenv init -)"
 . ~/.zsh/plugins/z/z.sh
 
-# added by travis gem
-[ -f /home/buti/.travis/travis.sh ] && source /home/buti/.travis/travis.sh

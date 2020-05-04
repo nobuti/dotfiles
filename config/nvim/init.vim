@@ -14,12 +14,13 @@ Plug 'haishanh/night-owl.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'prettier/vim-prettier'
-Plug 'cloudhead/neovim-fuzzy'
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-vinegar'
 Plug 'dyng/ctrlsf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'luochen1990/rainbow'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
@@ -134,8 +135,9 @@ let g:ale_fixers = {
 " Rainbow
 let g:rainbow_active = 1
 
-" neovim-fuzzy remap
-nnoremap <leader>p :FuzzyOpen<CR>
+" fzf.vim remap
+nnoremap <leader>p :GFiles<CR>
+nnoremap <C-p> :Files<CR>
 
 " Ignore node_modules with command-t
 let g:CommandTWildIgnore=&wildignore . ",*/node_modules"

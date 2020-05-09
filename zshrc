@@ -1,12 +1,12 @@
 # load our own completion functions
-fpath=(~/.zsh/completion $fpath)
+fpath+=$HOME/.zsh/pure
 
-# completion
-# autoload -U compinit
-# compinit
-autoload -Uz compinit promptinit;
-compinit
-promptinit
+# pure prompt
+autoload -U promptinit; promptinit
+# change the prompt symbol
+PURE_PROMPT_SYMBOL="~"
+# change the path color
+zstyle :prompt:pure:git:dirty color 242
 prompt pure
 
 for function in ~/.zsh/functions/*; do

@@ -46,6 +46,7 @@ set nobackup
 set noswapfile
 set nohidden
 set expandtab
+set autoread
 
 " Show file options above the command line
 set wildmenu
@@ -91,6 +92,9 @@ augroup netrw_buf_hidden_fix
                 \| endif
 
 augroup end
+
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver']
 
 " Javascript
 let g:jsx_ext_required = 0

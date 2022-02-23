@@ -12,7 +12,7 @@ alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 alias e="$VISUAL"
 alias v="$EDITOR"
-alias vim="nvim"
+alias vim="nvim -u ~/Dev/Personal/dotfiles/config/nvim/init.vim"
 
 # Bundler
 alias b="bundle"

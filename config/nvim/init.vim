@@ -37,7 +37,7 @@ syntax on " Syntax highlight
 let mapleader = ","
 
 " Theme
-colorscheme night-owl
+colorscheme snazzy
 
 set nu " Show line numbers
 filetype indent plugin on
@@ -100,7 +100,7 @@ let g:coc_global_extensions = ['coc-tsserver']
 let g:jsx_ext_required = 0
 
 " Airline configuration
-let g:airline_theme='night_owl'
+"let g:airline_theme='dark'
 "let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#buffer_nr_show = 1
 "let g:airline#extensions#tabline#fnamemod = ':.'
@@ -139,9 +139,9 @@ let g:ale_fixers = {
 " Rainbow
 let g:rainbow_active = 1
 
-" fzf.vim remap
-nnoremap <leader>p :GFiles<CR>
-nnoremap <C-p> :Files<CR>
+" fzf.vim
+let g:fzf_preview_window = 'right:60%'
+nnoremap <leader>p :Files<CR>
 
 " Ignore node_modules with command-t
 let g:CommandTWildIgnore=&wildignore . ",*/node_modules"

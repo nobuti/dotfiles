@@ -15,7 +15,7 @@ Plug 'wincent/command-t'
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-vinegar'
 Plug 'dyng/ctrlsf.vim'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install({'tag':1})}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'luochen1990/rainbow'
 call plug#end()
 

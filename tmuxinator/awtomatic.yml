@@ -1,0 +1,31 @@
+name: awtomatic
+root: ~
+
+windows:
+  - ngrok:
+    - ngrok start bundle
+  - dynamo:
+    - cd ~/Dev/Awtomatic/dynamodb
+    - docker-compose up
+  - postgres:
+    - cd ~/Dev/Awtomatic/shopify-api-data/docker
+    - npm run dev:db
+  - awtomatic:
+      layout: tiled
+      panes:
+        - bundle-shopify:
+          - cd ~/Dev/Awtomatic/bundle-shopify
+          - npm run dev
+        - bundle-widegt:
+          - cd ~/Dev/Awtomatic/bundle-shopify
+          - npm run dev:widget
+        - bundle-api:
+          - cd ~/Dev/Awtomatic/bundle-api
+          - npm run dev
+        - shopify-sqs-handlers:
+          - cd ~/Dev/Awtomatic/shopify-sqs-handlers
+        - shopify-api-data:
+          - cd ~/Dev/Awtomatic/shopify-api-data
+          - npm run dev
+        - editor:
+          - cd ~/Dev/Awtomatic/bundle-shopify

@@ -56,5 +56,15 @@ setopt CORRECT CORRECT_ALL
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
+# Z plugin
 . ~/.zsh/plugins/z/z.sh
 
+# zsh syntax highlighting
+. ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh autocompletion
+. ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Git completion
+autoload -Uz compinit && compinit
+zmodload -i zsh/complist

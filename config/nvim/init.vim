@@ -147,8 +147,8 @@ nnoremap <leader>p :Files<CR>
 let g:CommandTWildIgnore=&wildignore . ",*/node_modules"
 
 " Buffer tabs
-:noremap <C-Left> :bprev<CR>
-:noremap <C-Right> :bnext<CR>
+:noremap <A-Right> :bprev<CR>
+:noremap <A-Left> :bnext<CR>
 :noremap <C-x> :bw<CR>
 :noremap <C-n> :enew<CR>
 

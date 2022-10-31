@@ -1,14 +1,3 @@
-# load our own completion functions
-fpath+=$HOME/.zsh/pure
-
-# pure prompt
-autoload -U promptinit; promptinit
-# change the prompt symbol
-PURE_PROMPT_SYMBOL="~"
-# change the path color
-zstyle :prompt:pure:git:dirty color 242
-prompt pure
-
 for function in ~/.zsh/functions/*; do
   source $function
 done
@@ -17,7 +6,7 @@ done
 setopt auto_cd
 
 # use sublime as the visual editor
-export VISUAL=subl
+export VISUAL=code
 export EDITOR=vim
 
 # aliases
@@ -55,15 +44,6 @@ setopt CORRECT CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
-
-# Z plugin
-. ~/.zsh/plugins/z/z.sh
-
-# zsh syntax highlighting
-. ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# zsh autocompletion
-. ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Git completion
 autoload -Uz compinit && compinit

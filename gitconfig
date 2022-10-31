@@ -32,5 +32,6 @@
   rebase = true
 [push]
   default = upstream
+  autoSetupRemote = true
 [rebase]
   autoStash = true

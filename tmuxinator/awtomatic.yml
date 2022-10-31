@@ -10,6 +10,12 @@ windows:
   - postgres:
     - cd ~/Dev/Awtomatic/shopify-api-data/docker
     - npm run dev:db
+  - awtomatic-api:
+    - cd ~/Dev/Awtomatic/awtomatic-api
+    - npm run dev
+  - api-data:
+    - cd ~/Dev/Awtomatic/shopify-api-data
+    - npm run dev
   - awtomatic:
       layout: tiled
       panes:
@@ -19,13 +25,4 @@ windows:
         - bundle-widegt:
           - cd ~/Dev/Awtomatic/bundle-shopify
           - npm run dev:widget
-        - bundle-api:
-          - cd ~/Dev/Awtomatic/bundle-api
-          - npm run dev
-        - shopify-sqs-handlers:
-          - cd ~/Dev/Awtomatic/shopify-sqs-handlers
-        - shopify-api-data:
-          - cd ~/Dev/Awtomatic/shopify-api-data
-          - npm run dev
-        - editor:
-          - cd ~/Dev/Awtomatic/bundle-shopify
+

@@ -48,3 +48,13 @@ setopt EXTENDED_GLOB
 # Git completion
 autoload -Uz compinit && compinit
 zmodload -i zsh/complist
+
+# Pure prompt
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
+# use ~ instead of >
+PURE_PROMPT_SYMBOL="~"
+# initialize the prompt
+prompt pure

@@ -4,3 +4,5 @@ vim/bundle/
 config/nvim/plugged
 config/nvim/.netrwhist
 ssh/
+zsh/pure
+config/coc

@@ -58,3 +58,11 @@ zstyle :prompt:pure:git:stash show yes
 PURE_PROMPT_SYMBOL="~"
 # initialize the prompt
 prompt pure
+
+# zsh-syntax-highlighting
+# brew install zsh-syntax-highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh-autosuggestions
+# brew install zsh-autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

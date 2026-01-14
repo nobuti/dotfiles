@@ -1,0 +1,10 @@
+!bin
+vim/plugged/
+vim/bundle/
+config/nvim/plugged
+config/nvim/.netrwhist
+config/raycast
+config/configstore
+ssh/
+zsh/pure
+config/coc

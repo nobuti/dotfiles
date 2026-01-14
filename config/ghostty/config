@@ -1,0 +1,5 @@
+theme = Ayu Mirage
+font-family = "Hack Nerd Font Mono Regular"
+font-size = 20
+macos-icon = custom
+macos-custom-icon = ~/.config/ghostty/Hyper.icns

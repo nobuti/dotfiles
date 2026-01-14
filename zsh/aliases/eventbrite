@@ -1,0 +1,11 @@
+# Alias yak
+alias yak="TERM=xterm-256color yak"
+
+# Alias aws
+alias aws="aws --profile saml"
+
+alias awsLoginSandbox="saml2aws login -a okta --force --idp-provider Okta --mfa DUO --url https://eventbrite.okta.com/home/amazon_aws/0oa1h80zjahfJ4BDH1d8/272 --username miguel.romero@eventbrite.com --region us-east-1"
+
+alias awsLoginTest="saml2aws login -a okta --force --idp-provider Okta --mfa DUO --url https://eventbrite.okta.com/home/amazon_aws/0oa1h81301pgSeRKl1d8/272  --username miguel.romero@eventbrite.com --region us-east-1"
+
+alias awsLoginProd="saml2aws login -a okta --force --idp-provider Okta --mfa DUO --url https://eventbrite.okta.com/home/amazon_aws/0oa1h8130fdtJ9SUZ1d8/272  --username miguel.romero@eventbrite.com --region us-east-1"

@@ -1,0 +1,47 @@
+[user]
+  name = nobuti
+  email = buti@nobuti.com
+	signingkey = /Users/buti/.ssh/id_ed25519.pub
+[credential]
+  helper = store
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = cyan bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  pager = less -R
+[diff]
+  compactionHeuristic = true
+[pull]
+  rebase = true
+[push]
+  default = upstream
+  autoSetupRemote = true
+[rebase]
+  autoStash = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+	insteadOf = https://github.com/
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main

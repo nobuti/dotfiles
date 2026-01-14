@@ -1,0 +1,6 @@
+# Kill TCP process to avoid:
+# TCPServer Error: Address already in use.
+
+function ktcp() {
+  lsof -wni tcp:$1
+}

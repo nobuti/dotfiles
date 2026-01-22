@@ -8,3 +8,7 @@ config/configstore
 ssh/
 zsh/pure
 config/coc
+config/cagent
+config/mole
+
+zsh/config/env.local

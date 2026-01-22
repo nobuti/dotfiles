@@ -14,8 +14,15 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-# use incremental search
-bindkey "^R" history-incremental-search-backward
+# fzf - fuzzy finder integration (ctrl+r for history, ctrl+t for files)
+# Install fzf with: brew install fzf
+[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ] && source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+[ -f /opt/homebrew/opt/fzf/shell/completion.zsh ] && source /opt/homebrew/opt/fzf/shell/completion.zsh
+
+# Fallback to basic history search if fzf is not installed
+if ! type fzf &>/dev/null; then
+  bindkey "^R" history-incremental-search-backward
+fi
 
 # add some readline keys back
 bindkey "^A" beginning-of-line
@@ -28,9 +35,12 @@ setopt prompt_subst
 setopt histignoredups
 
 # keep TONS of history
+export HISTFILE=~/.zsh_history
 export HISTSIZE=1000000000
 export SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY          # share history across terminals
+setopt APPEND_HISTORY         # append to history file
 
 # automatically pushd
 setopt auto_pushd

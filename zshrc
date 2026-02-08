@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/buti/.zsh/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 for function in ~/.zsh/functions/*; do
   source $function
 done
@@ -90,3 +97,21 @@ export PATH
 # Assuming this is inside your .zshrc
 DOTFILES_PATH="$HOME/Dev/dotfiles"
 [ -f "$DOTFILES_PATH/zsh/env/env.local" ] && source "$DOTFILES_PATH/zsh/env/env.local"
+
+# bun completions
+[ -s "/Users/buti/.bun/_bun" ] && source "/Users/buti/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/Users/buti/.opencode/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/Users/buti/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -15,3 +15,4 @@ zeus.json
 .rbenv-vars
 
 zsh/config/env.local
+config/stripe

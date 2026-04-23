@@ -115,3 +115,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+ulimit -Sn 65536 >/dev/null 2>&1 || true

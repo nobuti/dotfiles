@@ -10,5 +10,7 @@ zsh/pure
 config/coc
 config/cagent
 config/mole
+config/opencode
 
 zsh/config/env.local
+zsh/completions/

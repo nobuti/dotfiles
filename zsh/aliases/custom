@@ -13,7 +13,10 @@ alias matar="ps aux"
 
 alias yo="sudo chown -R $USER:$USER ."
 alias database="docker run --rm -P -p 127.0.0.1:5432:5432 -e POSTGRES_PASSWORD=\"wadus\" --name pg postgres:alpine"
-alias gprune="git branch --merged | grep -v \"\*\" | grep -v \"master\" | grep -v \"develop\" | grep -v \"staging\" | grep -v \"sandbox\" | xargs -n 1 git branch -d"
+alias gprune="git branch | grep -v 'main' | xargs git branch -D"
 
 # Claude - run with auto-accept permissions (unattended mode)
 alias cc='claude --dangerously-skip-permissions'
+
+# Supabase local DB query shortcut
+alias dbq='docker exec supabase-db psql -U postgres -d postgres -c'

@@ -1,4 +1,3 @@
-# Unix
 alias tlf="tail -f"
 alias ln='ln -v'
 alias mkdir='mkdir -p'
@@ -12,7 +11,8 @@ alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 alias e="$VISUAL"
 alias v="$EDITOR"
-alias vim="nvim"
+alias vim="hx"
+alias vi="hx"
 alias rmnode="find . -name 'node_modules' -type d -prune -exec rm -rf {} \;"
 
 for alias in ~/.zsh/aliases/*; do

@@ -27,16 +27,15 @@ Install everything:
 
 ```sh
 brew install \
-  ast-grep colima difftastic docker docker-compose fd fzf gh git just \
-  mole neovim nvm pnpm ripgrep rtk shellcheck starship tree-sitter-cli yq z \
+  ast-grep colima difftastic docker docker-compose fd fzf gh git helix just \
+  mole nvm pnpm ripgrep rtk shellcheck starship yq z \
   zsh-autosuggestions zsh-syntax-highlighting
 ```
 
 ### Package reference
 
 **Editor**
-- `neovim` — modern Vim fork (config in `config/nvim/`)
-- `tree-sitter-cli` — required by `nvim-treesitter` (main branch) to compile parsers
+- `helix` — post-modern modal editor (config in `~/.config/helix/`). Aliased as `vim`, `vi`, `nvim` and set as `$EDITOR`
 
 **Shell experience**
 - `starship` — cross-shell prompt
@@ -73,41 +72,39 @@ brew install \
 - `rtk` — CLI proxy to minimize LLM token consumption
 - `mole` — macOS deep clean & optimization
 
-## Neovim
+## Helix
 
-Modern Lua config. Entry point: `config/nvim/init.lua`. Plugin manager is `lazy.nvim` (auto-bootstraps on first run). LSP via native `vim.lsp.config` + `mason.nvim`. Syntax via `nvim-treesitter` (main branch).
+Modal editor written in Rust. Tree-sitter, LSP, file-watching, and multi-cursor all built-in — no plugin system. Config lives in `~/.config/helix/`.
 
-### Structure
+### Files
 
 ```
-config/nvim/
-├── init.lua                  # entry point
-├── lazy-lock.json            # plugin versions
-└── lua/
-    ├── config/               # options, keymaps, autocmds, lazy bootstrap
-    └── plugins/              # one file per plugin group
-        ├── colorscheme.lua   # tokyonight
-        ├── lsp.lua           # mason + lspconfig + diagnostics
-        ├── completion.lua    # nvim-cmp + LuaSnip
-        ├── treesitter.lua    # parsers + highlight + indent
-        ├── telescope/editor  # editor.lua: telescope, gitsigns, oil, comment, autopairs, surround, flash, todos
-        ├── ui.lua            # lualine, bufferline, indent-blankline, which-key, notify
-        ├── formatting.lua    # conform.nvim + nvim-lint
-        └── git.lua           # fugitive
+~/.config/helix/
+├── config.toml       # editor options + keybindings
+├── languages.toml    # LSP/formatter wiring per language
+└── themes/           # optional custom themes
 ```
 
-### First launch
+### Language servers
+
+Install the JS/TS stack globally via pnpm:
 
 ```sh
-nvim
+pnpm add -g typescript typescript-language-server vscode-langservers-extracted \
+            @tailwindcss/language-server prettier
 ```
 
-- `lazy.nvim` clones itself and installs plugins.
-- `mason.nvim` installs LSPs (`ts_ls`, `eslint`, `html`, `cssls`, `tailwindcss`, `jsonls`) and formatters (`prettierd`, `prettier`, `stylua`).
-- `nvim-treesitter` installs parsers via `tree-sitter-cli`. Make sure it is on `$PATH` (`brew install tree-sitter-cli`).
+Verify with `hx --health <language>` (e.g. `hx --health typescript`).
 
-Run `:checkhealth` to verify everything.
+### Daily commands
+
+```sh
+hx                # open
+hx --tutor        # interactive tutorial (~30 min, mandatory if coming from vim)
+hx --health       # global status of LSPs, formatters, parsers
+:config-reload    # reload config without restart
+```
 
 ### Legacy Vim
 
-`~/.vimrc` is preserved for classic Vim compatibility. Neovim ignores it — it loads `init.lua` instead.
+`~/.vimrc` is left untouched for classic Vim. Helix ignores it.

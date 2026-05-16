@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#
+# gitta — garbage-collect local branches already integrated into the current
+# branch. Detects both regular merges and squash/rebase merges (where the
+# branch's tree is reachable from HEAD even though its commits aren't).
+# Run from main/master after a pull to prune stale feature branches.
 
 if test -n "$(git status --porcelain)"; then
   echo 'Unclean working tree. Commit or stash changes first.' >&2;

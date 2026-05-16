@@ -11,6 +11,7 @@ alias server="ruby -run -e httpd . -p 8080"
 # Jobs
 alias matar="ps aux"
 
+# Recursively reclaim ownership of cwd (fixes root-owned files from docker bind-mounts, sudo npm, etc.)
 alias yo="sudo chown -R $USER:$USER ."
 alias database="docker run --rm -P -p 127.0.0.1:5432:5432 -e POSTGRES_PASSWORD=\"wadus\" --name pg postgres:alpine"
 alias gprune="git branch | grep -v 'main' | xargs git branch -D"

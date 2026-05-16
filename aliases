@@ -12,7 +12,7 @@ alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 alias e="$VISUAL"
 alias v="$EDITOR"
-alias vim="nvim -u ~/Dev/dotfiles/config/nvim/init.vim"
+alias vim="nvim"
 alias rmnode="find . -name 'node_modules' -type d -prune -exec rm -rf {} \;"
 
 for alias in ~/.zsh/aliases/*; do

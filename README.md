@@ -23,18 +23,12 @@ This creates symlinks for config files in your home directory.
 
 Install Homebrew first: https://brew.sh
 
-Add taps:
-
-```sh
-brew tap stripe/stripe-cli
-```
-
 Install everything:
 
 ```sh
 brew install \
   ast-grep colima difftastic docker docker-compose fd fzf gh git just \
-  mole neovim nvm pnpm ripgrep rtk shellcheck starship stripe yq z \
+  mole neovim nvm pnpm ripgrep rtk shellcheck starship tree-sitter-cli yq z \
   zsh-autosuggestions zsh-syntax-highlighting
 ```
 
@@ -42,6 +36,7 @@ brew install \
 
 **Editor**
 - `neovim` — modern Vim fork (config in `config/nvim/`)
+- `tree-sitter-cli` — required by `nvim-treesitter` (main branch) to compile parsers
 
 **Shell experience**
 - `starship` — cross-shell prompt
@@ -75,18 +70,44 @@ brew install \
 - `shellcheck` — shell script linter
 
 **Other tools**
-- `stripe` — Stripe CLI (`stripe/stripe-cli` tap)
 - `rtk` — CLI proxy to minimize LLM token consumption
 - `mole` — macOS deep clean & optimization
 
 ## Neovim
 
-Plugin manager is `vim-plug`. On first launch run `:PlugInstall`. See `vimrc` for plugin list and `config/nvim/init.vim` for the entry point.
+Modern Lua config. Entry point: `config/nvim/init.lua`. Plugin manager is `lazy.nvim` (auto-bootstraps on first run). LSP via native `vim.lsp.config` + `mason.nvim`. Syntax via `nvim-treesitter` (main branch).
 
-Optional dependencies for full IDE features:
+### Structure
+
+```
+config/nvim/
+├── init.lua                  # entry point
+├── lazy-lock.json            # plugin versions
+└── lua/
+    ├── config/               # options, keymaps, autocmds, lazy bootstrap
+    └── plugins/              # one file per plugin group
+        ├── colorscheme.lua   # tokyonight
+        ├── lsp.lua           # mason + lspconfig + diagnostics
+        ├── completion.lua    # nvim-cmp + LuaSnip
+        ├── treesitter.lua    # parsers + highlight + indent
+        ├── telescope/editor  # editor.lua: telescope, gitsigns, oil, comment, autopairs, surround, flash, todos
+        ├── ui.lua            # lualine, bufferline, indent-blankline, which-key, notify
+        ├── formatting.lua    # conform.nvim + nvim-lint
+        └── git.lua           # fugitive
+```
+
+### First launch
 
 ```sh
-nvm install --lts             # required by coc.nvim
-nvm use --lts
-nvim +'CocInstall coc-tsserver coc-json coc-eslint coc-prettier' +qa
+nvim
 ```
+
+- `lazy.nvim` clones itself and installs plugins.
+- `mason.nvim` installs LSPs (`ts_ls`, `eslint`, `html`, `cssls`, `tailwindcss`, `jsonls`) and formatters (`prettierd`, `prettier`, `stylua`).
+- `nvim-treesitter` installs parsers via `tree-sitter-cli`. Make sure it is on `$PATH` (`brew install tree-sitter-cli`).
+
+Run `:checkhealth` to verify everything.
+
+### Legacy Vim
+
+`~/.vimrc` is preserved for classic Vim compatibility. Neovim ignores it — it loads `init.lua` instead.

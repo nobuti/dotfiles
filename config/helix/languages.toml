@@ -1,0 +1,104 @@
+# JS/TS family — typescript-language-server + eslint + prettier
+[[language]]
+name = "typescript"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+language-servers = ["typescript-language-server", "eslint"]
+
+[[language]]
+name = "tsx"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+language-servers = ["typescript-language-server", "eslint"]
+
+[[language]]
+name = "javascript"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "babel"] }
+language-servers = ["typescript-language-server", "eslint"]
+
+[[language]]
+name = "jsx"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "babel"] }
+language-servers = ["typescript-language-server", "eslint"]
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
+language-servers = ["vscode-json-language-server"]
+
+[[language]]
+name = "html"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "html"] }
+language-servers = ["vscode-html-language-server"]
+
+[[language]]
+name = "css"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "css"] }
+language-servers = ["vscode-css-language-server"]
+
+[[language]]
+name = "scss"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "scss"] }
+language-servers = ["vscode-css-language-server"]
+
+[[language]]
+name = "markdown"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
+
+[[language]]
+name = "yaml"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+# Language server entries
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+config.hostInfo = "helix"
+
+[language-server.typescript-language-server.config.preferences]
+includeCompletionsForModuleExports = true
+includeCompletionsWithInsertText = true
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+validate = "on"
+experimental = { useFlatConfig = false }
+rulesCustomizations = []
+run = "onType"
+problems = { shortenToSingleLine = false }
+nodePath = ""
+workingDirectory = { mode = "auto" }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = true }
+
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+config = { provideFormatter = true, css.lint = { validProperties = [] } }
+
+[language-server.vscode-css-language-server]
+command = "vscode-css-language-server"
+args = ["--stdio"]
+config = { provideFormatter = true, css.lint = { validProperties = [] } }
+
+[language-server.vscode-json-language-server]
+command = "vscode-json-language-server"
+args = ["--stdio"]
+config = { provideFormatter = true, json = { validate = { enable = true } } }
+
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]

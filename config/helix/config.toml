@@ -1,0 +1,93 @@
+theme = "tokyonight_storm"
+
+[editor]
+line-number = "absolute"
+mouse = true
+cursorline = false
+auto-format = true
+auto-save = false
+auto-completion = true
+auto-info = true
+completion-trigger-len = 1
+completion-replace = true
+true-color = true
+bufferline = "multiple"     # show buffer tabs only when more than one open
+color-modes = true
+text-width = 100
+shell = ["zsh", "-c"]
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left  = ["mode", "spinner", "file-name", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "selections", "register", "position", "file-encoding", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = false
+auto-signature-help = true
+
+[editor.indent-guides]
+render = true
+character = "│"
+skip-levels = 1
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+git-exclude = true
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+nbsp = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+tab = "→"
+nbsp = "␣"
+
+[editor.soft-wrap]
+enable = false
+
+[editor.smart-tab]
+enable = true
+
+# Inline blame (git) lines on cursor hover-ish (requires LSP-like adapter).
+# Helix doesn't ship gitsigns; basic gutter signs are built-in for modified lines.
+
+# Keybinding remap — minimal vim-ish quality of life on top of Helix defaults.
+[keys.normal]
+# Center after large jumps
+"C-d" = ["half_page_down", "align_view_center"]
+"C-u" = ["half_page_up", "align_view_center"]
+# Clear search highlight
+esc = ["collapse_selection", "keep_primary_selection"]
+# Save with Ctrl-s
+"C-s" = ":write"
+# Quick window split nav like vim
+"C-h" = "jump_view_left"
+"C-j" = "jump_view_down"
+"C-k" = "jump_view_up"
+"C-l" = "jump_view_right"
+# Reload buffer
+"C-r" = ":reload-all"
+
+[keys.normal.space]
+# Leader (space) extras. Default file picker is space-f; keep it.
+"," = "buffer_picker"          # space-, like in vim leader-,
+"x" = ":bc"                    # close current buffer (Helix has :buffer-close)
+
+[keys.insert]
+"C-s" = ["normal_mode", ":write"]
+
+[keys.select]
+"C-s" = ":write"

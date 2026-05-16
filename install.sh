@@ -23,7 +23,7 @@ for name in *; do
       fi
     fi
   else
-    if [ "$name" != 'install.sh' ] && [ "$name" != 'README.md' ]; then
+    if [ "$name" != 'install.sh' ] && [ "$name" != 'README.md' ] && [ "$name" != 'link.sh' ] && [ "$name" != 'config' ]; then
       echo "Creating $target"
       if [ -n "$(grep "$cutstring" "$name")" ]; then
         cp "$PWD/$name" "$target"
@@ -33,3 +33,6 @@ for name in *; do
     fi
   fi
 done
+
+# Per-app symlinks for ~/.config (avoids whole-dir symlink trap)
+"$PWD/link.sh"

@@ -3,14 +3,8 @@ vim/plugged/
 vim/bundle/
 config/nvim/plugged
 config/nvim/.netrwhist
-config/raycast
-config/configstore
+config/gh/hosts.yml
 ssh/
 zsh/pure
-config/coc
-config/cagent
-config/mole
-config/opencode
-
 zsh/config/env.local
 zsh/completions/
